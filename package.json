@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --config config/vite/vite.config.ts",
     "build": "tsc && vite build --config config/vite/vite.config.ts",
-    "preview": "vite preview --config config/vite/vite.config.ts"
+    "preview": "vite preview --config config/vite/vite.config.ts",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
