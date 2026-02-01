@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [master, main]
+    branches: [master]
   pull_request:
-    branches: [master, main]
+    branches: [master]
 
 jobs:
   typecheck-and-build:
@@ -30,13 +30,13 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run type check
-        run: pnpm tsc --noEmit
+        run: pnpm lint:ts:type
 
-      - name: Build project
-        run: pnpm build
+      - name: Build page
+        run: pnpm page:build
 
       - name: Build Storybook
-        run: pnpm build-storybook
+        run: pnpm storybook:build
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4

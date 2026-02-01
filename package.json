@@ -4,12 +4,11 @@
   "description": "Responsive React application with TypeScript and Material-UI",
   "type": "module",
   "scripts": {
-    "dev": "vite --config config/vite/vite.config.ts",
-    "build": "tsc && vite build --config config/vite/vite.config.ts",
-    "preview": "vite preview --config config/vite/vite.config.ts",
-    "typecheck": "tsc --noEmit",
-    "storybook": "storybook dev -p 6006 -c config/storybook",
-    "build-storybook": "storybook build -c config/storybook"
+    "page:dev": "vite --config config/vite/vite.config.ts",
+    "page:build": "tsc && vite build --config config/vite/vite.config.ts",
+    "lint:ts:type": "tsc --noEmit",
+    "storybook:dev": "storybook dev -p 6006 -c config/storybook",
+    "storybook:build": "storybook build -c config/storybook"
   },
   "keywords": [],
   "author": "",
