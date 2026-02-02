@@ -12,7 +12,7 @@ import {
   Typography,
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
-import { navItems, RouteKind } from '@ui/routes/nav_items';
+import { navItems, routes, RouteKind } from '@ui/routes/nav_items';
 import './global.css';
 
 const drawerWidth = 240;
@@ -33,9 +33,13 @@ export default function AppLayout({ children, current }: AppLayoutProps) {
   const drawer = (
     <Box>
       <List>
-        {Object.entries(navItems).map(([, label]) => (
+        {Object.entries(navItems).map(([key, label]) => (
           <ListItem key={label} disablePadding>
-            <ListItemButton>
+            <ListItemButton
+              component="a"
+              href={routes[key as RouteKind]}
+              selected={current === key}
+            >
               <ListItemText primary={label} />
             </ListItemButton>
           </ListItem>
