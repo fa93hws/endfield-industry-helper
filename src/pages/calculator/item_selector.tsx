@@ -17,10 +17,12 @@ export function ItemSelector({ value, onChange, label, placeholder }: ItemSelect
 
   return (
     <Autocomplete
-      value={items.find((item) => item.key === value) ?? null}
+      value={items.find((item) => item.key === value)}
       onChange={(_, newValue) => onChange(newValue?.key ?? null)}
       options={items}
       getOptionLabel={(option) => option.name}
+      disableClearable
+      size="small"
       renderOption={(props, option) => {
         const { key, ...otherProps } = props;
         return (
@@ -43,7 +45,6 @@ export function ItemSelector({ value, onChange, label, placeholder }: ItemSelect
       renderInput={(params) => (
         <TextField {...params} label={label ?? '选择产品'} placeholder={placeholder} />
       )}
-      sx={{ minWidth: 200 }}
     />
   );
 }

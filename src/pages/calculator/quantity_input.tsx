@@ -19,10 +19,22 @@ export function QuantityInput({ value, onChange, label }: QuantityInputProps) {
       type="number"
       value={value}
       onChange={handleChange}
-      label={label ?? '数量'}
-      helperText="/分钟"
+      label={label ?? '/分钟'}
+      size="small"
       inputProps={{ min: 0, step: 1 }}
-      sx={{ width: 120 }}
+      sx={{
+        '& input[type=number]': {
+          MozAppearance: 'textfield',
+        },
+        '& input[type=number]::-webkit-outer-spin-button': {
+          WebkitAppearance: 'none',
+          margin: 0,
+        },
+        '& input[type=number]::-webkit-inner-spin-button': {
+          WebkitAppearance: 'none',
+          margin: 0,
+        },
+      }}
     />
   );
 }

@@ -1,4 +1,4 @@
-import { Stack, IconButton } from '@mui/material';
+import { Stack, IconButton, Box } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { ItemSelector } from './item_selector';
 import { QuantityInput } from './quantity_input';
@@ -20,12 +20,18 @@ export function DesiredOutputRow({
   onRemove,
 }: DesiredOutputRowProps) {
   return (
-    <Stack direction="row" spacing={2} alignItems="flex-start">
-      <ItemSelector value={item} onChange={onItemChange} />
-      <QuantityInput value={quantity} onChange={onQuantityChange} />
-      <IconButton onClick={onRemove} color="error" sx={{ mt: 1 }}>
-        <DeleteIcon />
-      </IconButton>
+    <Stack direction="row" spacing={2} alignItems="center">
+      <Box sx={{ flex: '0 0 55%' }}>
+        <ItemSelector value={item} onChange={onItemChange} />
+      </Box>
+      <Box sx={{ flex: '0 0 20%' }}>
+        <QuantityInput value={quantity} onChange={onQuantityChange} />
+      </Box>
+      <Box sx={{ flex: '0 0 25%' }}>
+        <IconButton onClick={onRemove} color="error">
+          <DeleteIcon />
+        </IconButton>
+      </Box>
     </Stack>
   );
 }
