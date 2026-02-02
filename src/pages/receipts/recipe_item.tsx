@@ -1,5 +1,5 @@
 import { images } from '@data/items/images';
-import { aicProducts } from '@data/items/aic';
+import { allProduces } from '@data/items/aic';
 import { naturalItems } from '@data/items/natural';
 import { Receipt } from '@data/receipts/type';
 import { Box, Typography, Stack, Avatar } from '@mui/material';
@@ -9,7 +9,7 @@ interface RecipeItemProps {
   recipe: Receipt;
 }
 
-const allItems = { ...naturalItems, ...aicProducts };
+const allItems = { ...naturalItems, ...allProduces };
 
 export default function RecipeItem({ recipe }: RecipeItemProps) {
   return (

@@ -1,6 +1,6 @@
 import AppLayout from '@ui/layout/app_layout';
 import { images } from '@data/items/images';
-import { aicProducts } from '@data/items/aic';
+import { allProduces } from '@data/items/aic';
 import { naturalItems } from '@data/items/natural';
 import { Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 
@@ -41,7 +41,7 @@ export default function Page() {
         AIC产品
       </Typography>
       <Grid container spacing={2}>
-        {Object.entries(aicProducts).map(([key, name]) => (
+        {Object.entries(allProduces).map(([key, name]) => (
           <Grid size={{ xs: 6, sm: 4, md: 3, lg: 2 }} key={key}>
             <Card>
               <CardMedia

@@ -5,6 +5,29 @@ const carbonReceipts: Receipt[] = [
     outputs: [{ item: 'carbon', perMin: 30 }],
     inputs: [{ item: 'sandleaf', perMin: 30 }],
   },
+  {
+    inputs: [
+      { item: 'sandleafPowder', perMin: 30 },
+      { item: 'carbonPowder', perMin: 60 },
+    ],
+    outputs: [{ item: 'denseCarbonPowder', perMin: 30 }],
+  },
+  {
+    inputs: [{ item: 'groundBuckflowerPowder', perMin: 30 }],
+    outputs: [{ item: 'denseCarbonPowder', perMin: 30 }],
+  },
+  {
+    inputs: [{ item: 'groundCitromePowder', perMin: 30 }],
+    outputs: [{ item: 'denseCarbonPowder', perMin: 30 }],
+  },
+  {
+    inputs: [{ item: 'denseCarbonPowder', perMin: 30 }],
+    outputs: [{ item: 'stabilizedCarbon', perMin: 30 }],
+  },
+  {
+    inputs: [{ item: 'denseOrigocrustPowder', perMin: 30 }],
+    outputs: [{ item: 'packedOrigocrust', perMin: 30 }],
+  },
 ];
 
 const originiumReceipts: Receipt[] = [
@@ -23,6 +46,24 @@ const originiumReceipts: Receipt[] = [
   {
     inputs: [{ item: 'originiumOre', perMin: 30 }],
     outputs: [{ item: 'originiumPowder', perMin: 30 }],
+  },
+  {
+    inputs: [
+      { item: 'sandleafPowder', perMin: 30 },
+      { item: 'originiumPowder', perMin: 60 },
+    ],
+    outputs: [{ item: 'denseOriginiumPowder', perMin: 30 }],
+  },
+  {
+    inputs: [
+      { item: 'sandleafPowder', perMin: 30 },
+      { item: 'origocrustPowder', perMin: 60 },
+    ],
+    outputs: [{ item: 'denseOrigocrustPowder', perMin: 30 }],
+  },
+  {
+    inputs: [{ item: 'denseOriginiumPowder', perMin: 30 }],
+    outputs: [{ item: 'denseOrigocrustPowder', perMin: 30 }],
   },
 ];
 
@@ -47,6 +88,17 @@ const amethystReceipts: Receipt[] = [
     inputs: [{ item: 'amethystFiber', perMin: 60 }],
     outputs: [{ item: 'amethystBottle', perMin: 30 }],
   },
+  {
+    inputs: [
+      { item: 'sandleafPowder', perMin: 30 },
+      { item: 'amethystPowder', perMin: 60 },
+    ],
+    outputs: [{ item: 'crystonPowder', perMin: 30 }],
+  },
+  {
+    inputs: [{ item: 'crystonPowder', perMin: 30 }],
+    outputs: [{ item: 'crystonFiber', perMin: 30 }],
+  },
 ];
 
 const ferriumReceipts: Receipt[] = [
@@ -69,6 +121,25 @@ const ferriumReceipts: Receipt[] = [
   {
     inputs: [{ item: 'ferrium', perMin: 60 }],
     outputs: [{ item: 'ferriumBottle', perMin: 30 }],
+  },
+  {
+    inputs: [
+      { item: 'sandleafPowder', perMin: 30 },
+      { item: 'ferriumPowder', perMin: 60 },
+    ],
+    outputs: [{ item: 'denseFerriumPowder', perMin: 30 }],
+  },
+  {
+    inputs: [{ item: 'denseFerriumPowder', perMin: 30 }],
+    outputs: [{ item: 'steel', perMin: 30 }],
+  },
+  {
+    inputs: [{ item: 'steel', perMin: 30 }],
+    outputs: [{ item: 'steelPart', perMin: 30 }],
+  },
+  {
+    inputs: [{ item: 'steel', perMin: 60 }],
+    outputs: [{ item: 'steelBottle', perMin: 30 }],
   },
 ];
 
