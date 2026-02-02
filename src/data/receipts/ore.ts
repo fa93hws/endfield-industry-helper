@@ -85,10 +85,6 @@ const amethystReceipts: Receipt[] = [
     outputs: [{ item: 'amethystPart', perMin: 30 }],
   },
   {
-    inputs: [{ item: 'amethystFiber', perMin: 60 }],
-    outputs: [{ item: 'amethystBottle', perMin: 30 }],
-  },
-  {
     inputs: [
       { item: 'sandleafPowder', perMin: 30 },
       { item: 'amethystPowder', perMin: 60 },
@@ -119,10 +115,6 @@ const ferriumReceipts: Receipt[] = [
     outputs: [{ item: 'ferriumPart', perMin: 30 }],
   },
   {
-    inputs: [{ item: 'ferrium', perMin: 60 }],
-    outputs: [{ item: 'ferriumBottle', perMin: 30 }],
-  },
-  {
     inputs: [
       { item: 'sandleafPowder', perMin: 30 },
       { item: 'ferriumPowder', perMin: 60 },
@@ -136,6 +128,17 @@ const ferriumReceipts: Receipt[] = [
   {
     inputs: [{ item: 'steel', perMin: 30 }],
     outputs: [{ item: 'steelPart', perMin: 30 }],
+  },
+];
+
+export const bottleReceipts: Receipt[] = [
+  {
+    inputs: [{ item: 'amethystFiber', perMin: 60 }],
+    outputs: [{ item: 'amethystBottle', perMin: 30 }],
+  },
+  {
+    inputs: [{ item: 'ferrium', perMin: 60 }],
+    outputs: [{ item: 'ferriumBottle', perMin: 30 }],
   },
   {
     inputs: [{ item: 'steel', perMin: 60 }],
