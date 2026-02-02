@@ -12,7 +12,7 @@ import {
   Typography,
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
-import { navItems, RouteKind } from '../routes/nav_items';
+import { navItems, RouteKind } from '@ui/routes/nav_items';
 import './global.css';
 
 const drawerWidth = 240;

@@ -1,4 +1,4 @@
-import AppLayout from '../../ui/layout/app_layout';
+import AppLayout from '@ui/layout/app_layout';
 
 export default function Page() {
   return (
