@@ -40,12 +40,12 @@ export default function Page() {
           onRemove={removeDesiredOutput}
         />
 
+        <NaturalResourcesSection naturalResources={naturalResources} />
+
         <ProductionChainSection
           intermediateProducts={intermediateProducts}
           onRecipeChange={selectRecipe}
         />
-
-        <NaturalResourcesSection naturalResources={naturalResources} />
       </Stack>
     </AppLayout>
   );
