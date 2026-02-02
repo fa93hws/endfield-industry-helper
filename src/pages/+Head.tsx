@@ -11,7 +11,10 @@ export function Head() {
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="description" content={description} />
-      <meta name="keywords" content="终末地,Endfield,基建,生产配方,计算器,游戏工具" />
+      <meta
+        name="keywords"
+        content="终末地,Endfield,终末地基建,基建,生产配方,配方查询,计算器,配平,游戏工具,基建工具"
+      />
       <meta name="author" content="Endfield Infra Helper" />
 
       {/* Open Graph / Facebook */}
