@@ -1,8 +1,8 @@
-import { Receipt } from '@data/receipts/type';
-import { Typography, Stack, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { RecipeGroup } from './recipe_group';
+import { Accordion, AccordionDetails, AccordionSummary, Stack, Typography } from '@mui/material';
 import { sortReceiptsByOutput } from '@data/receipts/sort';
+import { Receipt } from '@data/receipts/type';
+import { RecipeGroup } from './recipe_group';
 
 interface ReceiptSectionProps {
   title: string;

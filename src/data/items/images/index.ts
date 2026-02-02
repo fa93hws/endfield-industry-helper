@@ -1,12 +1,12 @@
 import type { AicProductKey } from '../aic';
 import type { NaturalItemKey } from '../natural';
-import { oreImages, refinedOreImages, orePowderImages } from './ore';
-import { plantImages, plantSeedImages, plantPowderImages } from './plant';
-import { medicineImages } from './medicine';
-import { bottleImages } from './bottle';
 import { batteryImages } from './battery';
+import { bottleImages } from './bottle';
 import { componentImages } from './component';
+import { medicineImages } from './medicine';
+import { oreImages, orePowderImages, refinedOreImages } from './ore';
 import { otherImages } from './other';
+import { plantImages, plantPowderImages, plantSeedImages } from './plant';
 
 export const images: Record<AicProductKey | NaturalItemKey, string> = {
   ...oreImages,

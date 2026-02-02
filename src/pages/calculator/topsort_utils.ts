@@ -1,5 +1,5 @@
 import { AicProductKey } from '@data/items/aic';
-import { ProductionNode, IntermediateProduct } from './calculator_utils';
+import { IntermediateProduct, ProductionNode } from './calculator_utils';
 
 /**
  * Calculate the depth of each item in the production tree

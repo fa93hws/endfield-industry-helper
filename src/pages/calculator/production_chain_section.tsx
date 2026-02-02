@@ -1,8 +1,8 @@
-import { Stack, Paper, Typography } from '@mui/material';
-import { RecipeSelectionCard } from './recipe_selection_card';
-import { IntermediateProduct, ProductionNode } from './calculator_utils';
+import { Paper, Stack, Typography } from '@mui/material';
 import { AicProductKey } from '@data/items/aic';
 import { Receipt } from '@data/receipts/type';
+import { IntermediateProduct, ProductionNode } from './calculator_utils';
+import { RecipeSelectionCard } from './recipe_selection_card';
 import { topologicalSort } from './topsort_utils';
 
 interface ProductionChainSectionProps {

@@ -1,19 +1,19 @@
-import {
-  Paper,
-  Typography,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  RadioGroup,
-  FormControlLabel,
-  Radio,
-  Stack,
-  Chip,
-} from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { RecipeItem } from '@ui/recipe/recipe_item';
-import { Receipt } from '@data/receipts/type';
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Chip,
+  FormControlLabel,
+  Paper,
+  Radio,
+  RadioGroup,
+  Stack,
+  Typography,
+} from '@mui/material';
 import { AicProductKey, allProduces } from '@data/items/aic';
+import { Receipt } from '@data/receipts/type';
+import { RecipeItem } from '@ui/recipe/recipe_item';
 
 interface RecipeSelectionCardProps {
   item: AicProductKey;

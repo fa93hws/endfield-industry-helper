@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { sortReceiptsByOutput } from '@data/receipts/sort';
 import { Receipt } from '@data/receipts/type';
 

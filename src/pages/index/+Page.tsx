@@ -1,6 +1,6 @@
-import { AppLayout } from '@ui/layout/app_layout';
-import { Link, Typography, Box, Stack } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { Box, Link, Stack, Typography } from '@mui/material';
+import { AppLayout } from '@ui/layout/app_layout';
 
 export function Page() {
   return (

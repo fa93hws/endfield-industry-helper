@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { RecipeItem } from '../recipe_item';
 import { Receipt } from '@data/receipts/type';
+import { RecipeItem } from '../recipe_item';
 
 const meta = {
   title: 'UI/Recipe/RecipeItem',

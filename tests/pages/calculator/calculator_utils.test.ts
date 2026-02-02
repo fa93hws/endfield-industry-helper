@@ -1,9 +1,9 @@
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import {
+  aggregateNaturalResources,
+  buildProductionTree,
   buildRecipeMap,
   isNaturalResource,
-  buildProductionTree,
-  aggregateNaturalResources,
 } from '../../../src/pages/calculator/calculator_utils';
 
 describe('Calculator Utilities', () => {

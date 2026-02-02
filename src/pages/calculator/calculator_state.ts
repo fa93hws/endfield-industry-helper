@@ -1,14 +1,14 @@
-import { useState, useMemo, useCallback } from 'react';
-import { Receipt } from '@data/receipts/type';
+import { useCallback, useMemo, useState } from 'react';
 import { AicProductKey } from '@data/items/aic';
 import { NaturalItemKey } from '@data/items/natural';
+import { Receipt } from '@data/receipts/type';
 import {
-  ProductionNode,
-  buildRecipeMap,
-  buildProductionTree,
-  aggregateNaturalResources,
   aggregateIntermediateProducts,
+  aggregateNaturalResources,
+  buildProductionTree,
+  buildRecipeMap,
   IntermediateProduct,
+  ProductionNode,
 } from './calculator_utils';
 
 export interface DesiredOutput {

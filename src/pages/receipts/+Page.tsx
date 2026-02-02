@@ -1,11 +1,11 @@
-import { useState, useMemo } from 'react';
-import { AppLayout } from '@ui/layout/app_layout';
-import { receiptSections } from '@data/receipts';
-import { Typography, Stack, TextField, InputAdornment } from '@mui/material';
+import { useMemo, useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
-import { ReceiptSection } from './receipt_section';
+import { InputAdornment, Stack, TextField, Typography } from '@mui/material';
 import { allProduces } from '@data/items/aic';
 import { naturalItems } from '@data/items/natural';
+import { receiptSections } from '@data/receipts';
+import { AppLayout } from '@ui/layout/app_layout';
+import { ReceiptSection } from './receipt_section';
 
 export function Page() {
   const [searchQuery, setSearchQuery] = useState('');

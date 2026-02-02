@@ -1,12 +1,12 @@
-import { describe, it, expect } from 'vitest';
-import { topologicalSort } from '../../../src/pages/calculator/topsort_utils';
-import {
-  ProductionNode,
-  IntermediateProduct,
-} from '../../../src/pages/calculator/calculator_utils';
-import { Receipt } from '@data/receipts/type';
+import { describe, expect, it } from 'vitest';
 import { AicProductKey } from '@data/items/aic';
 import { NaturalItemKey } from '@data/items/natural';
+import { Receipt } from '@data/receipts/type';
+import {
+  IntermediateProduct,
+  ProductionNode,
+} from '../../../src/pages/calculator/calculator_utils';
+import { topologicalSort } from '../../../src/pages/calculator/topsort_utils';
 
 describe('Topological Sort', () => {
   // Helper function to create a mock IntermediateProduct

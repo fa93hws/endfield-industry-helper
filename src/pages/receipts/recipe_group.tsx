@@ -1,14 +1,14 @@
-import { Receipt } from '@data/receipts/type';
-import {
-  Box,
-  Typography,
-  Stack,
-  Paper,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-} from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Box,
+  Paper,
+  Stack,
+  Typography,
+} from '@mui/material';
+import { Receipt } from '@data/receipts/type';
 import { RecipeItem } from '@ui/recipe/recipe_item';
 
 interface RecipeGroupProps {

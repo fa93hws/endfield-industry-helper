@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { ReceiptSection } from '../receipt_section';
-import { Receipt } from '@data/receipts/type';
 import { Stack } from '@mui/material';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Receipt } from '@data/receipts/type';
+import { ReceiptSection } from '../receipt_section';
 
 const meta = {
   title: 'Pages/Receipts/ReceiptSection',

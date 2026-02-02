@@ -1,8 +1,8 @@
-import { oreReceipts, bottleReceipts } from './ore';
-import { plantReceipts, medicineReceipts } from './medicine';
 import { batteryReceipts } from './battery';
-import { Receipt } from './type';
 import { components } from './component';
+import { medicineReceipts, plantReceipts } from './medicine';
+import { bottleReceipts, oreReceipts } from './ore';
+import { Receipt } from './type';
 
 export const allReceipts = [
   ...oreReceipts,

@@ -1,5 +1,5 @@
-import { Autocomplete, TextField, Avatar, Box, Typography } from '@mui/material';
-import { allProduces, AicProductKey } from '@data/items/aic';
+import { Autocomplete, Avatar, Box, TextField, Typography } from '@mui/material';
+import { AicProductKey, allProduces } from '@data/items/aic';
 import { images } from '@data/items/images';
 
 interface ItemSelectorProps {

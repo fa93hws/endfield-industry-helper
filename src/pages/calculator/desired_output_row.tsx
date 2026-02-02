@@ -1,8 +1,8 @@
-import { Stack, IconButton, Box } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { Box, IconButton, Stack } from '@mui/material';
+import { AicProductKey } from '@data/items/aic';
 import { ItemSelector } from './item_selector';
 import { QuantityInput } from './quantity_input';
-import { AicProductKey } from '@data/items/aic';
 
 interface DesiredOutputRowProps {
   item: AicProductKey | null;

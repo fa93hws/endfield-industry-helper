@@ -1,4 +1,5 @@
-import { useState, ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
+import { Menu as MenuIcon } from '@mui/icons-material';
 import {
   AppBar,
   Box,
@@ -11,8 +12,7 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material';
-import { Menu as MenuIcon } from '@mui/icons-material';
-import { navItems, routes, RouteKind } from '@ui/routes/nav_items';
+import { navItems, RouteKind, routes } from '@ui/routes/nav_items';
 import './global.css';
 
 const drawerWidth = 240;

@@ -1,6 +1,6 @@
-import { Stack, Paper, Typography } from '@mui/material';
-import { NaturalResourceItem } from './natural_resource_item';
+import { Paper, Stack, Typography } from '@mui/material';
 import { NaturalItemKey, ores, plants } from '@data/items/natural';
+import { NaturalResourceItem } from './natural_resource_item';
 
 interface NaturalResourcesSectionProps {
   naturalResources: Map<NaturalItemKey, number>;

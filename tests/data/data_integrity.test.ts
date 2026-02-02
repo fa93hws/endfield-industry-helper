@@ -1,7 +1,7 @@
-import { describe, it, expect } from 'vitest';
-import { allProduces, AicProductKey } from '@data/items/aic';
-import { allReceipts } from '@data/receipts';
+import { describe, expect, it } from 'vitest';
+import { AicProductKey, allProduces } from '@data/items/aic';
 import { naturalItems } from '@data/items/natural';
+import { allReceipts } from '@data/receipts';
 
 describe('Data Integrity', () => {
   it('every AIC product should have at least one recipe that produces it', () => {
