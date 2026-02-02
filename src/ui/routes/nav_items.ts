@@ -6,6 +6,6 @@ export const routes: Record<RouteKind, string> = {
 };
 
 export const navItems: Record<RouteKind, string> = {
-  items: '物品列表',
+  items: '首页',
   receipts: '配方',
 };

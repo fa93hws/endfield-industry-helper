@@ -22,7 +22,7 @@ describe('AppLayout', () => {
     );
 
     const appBar = screen.getByRole('banner');
-    expect(appBar).toHaveTextContent('物品列表');
+    expect(appBar).toHaveTextContent('首页');
   });
 
   it('should have drawer closed by default', () => {
@@ -61,7 +61,7 @@ describe('AppLayout', () => {
     );
 
     // Check if navigation items exist
-    const navItems = screen.getAllByText('物品列表');
+    const navItems = screen.getAllByText('首页');
     // Should have at least one (in the title or nav)
     expect(navItems.length).toBeGreaterThan(0);
   });

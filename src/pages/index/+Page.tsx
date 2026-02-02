@@ -1,65 +1,45 @@
 import AppLayout from '@ui/layout/app_layout';
-import { images } from '@data/items/images';
-import { allProduces } from '@data/items/aic';
-import { naturalItems } from '@data/items/natural';
-import { Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import { Link, Typography, Box, Stack } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 export default function Page() {
   return (
     <AppLayout current="items">
       <Typography variant="h4" gutterBottom>
-        物品
+        欢迎
       </Typography>
 
-      {/* Natural Items Section */}
-      <Typography variant="h5" gutterBottom sx={{ mt: 4 }}>
-        自然物品
-      </Typography>
-      <Grid container spacing={2}>
-        {Object.entries(naturalItems).map(([key, name]) => (
-          <Grid size={{ xs: 6, sm: 4, md: 3, lg: 2 }} key={key}>
-            <Card>
-              <CardMedia
-                component="img"
-                height="140"
-                image={images[key as keyof typeof images]}
-                alt={name}
-                sx={{ objectFit: 'contain', bgcolor: 'grey.100' }}
-              />
-              <CardContent>
-                <Typography variant="body2" align="center" noWrap>
-                  {name}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+      <Stack spacing={3}>
+        <Box>
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            这是一个终末地基础设施助手，帮助你查看和管理各种生产配方。
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            你可以浏览不同类型的配方，包括矿石、植物、药品、电池和装备组件等。
+          </Typography>
+        </Box>
 
-      {/* AIC Products Section */}
-      <Typography variant="h5" gutterBottom sx={{ mt: 4 }}>
-        AIC产品
-      </Typography>
-      <Grid container spacing={2}>
-        {Object.entries(allProduces).map(([key, name]) => (
-          <Grid size={{ xs: 6, sm: 4, md: 3, lg: 2 }} key={key}>
-            <Card>
-              <CardMedia
-                component="img"
-                height="140"
-                image={images[key as keyof typeof images]}
-                alt={name}
-                sx={{ objectFit: 'contain', bgcolor: 'grey.100' }}
-              />
-              <CardContent>
-                <Typography variant="body2" align="center" noWrap>
-                  {name}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+        <Stack spacing={2}>
+          <Link href="/receipts" variant="h6" underline="hover">
+            查看配方 →
+          </Link>
+          <Link href="#" variant="h6" underline="hover" color="text.secondary">
+            量化计算器 (WIP)
+          </Link>
+        </Stack>
+
+        <Box sx={{ mt: 4 }}>
+          <Link
+            href="https://github.com/fa93hws/endfield-infra-helper"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+          >
+            <GitHubIcon />
+            <Typography variant="body2">View on GitHub</Typography>
+          </Link>
+        </Box>
+      </Stack>
     </AppLayout>
   );
 }
