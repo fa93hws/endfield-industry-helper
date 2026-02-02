@@ -6,7 +6,7 @@ interface QuantityInputProps {
   label?: string;
 }
 
-export default function QuantityInput({ value, onChange, label }: QuantityInputProps) {
+export function QuantityInput({ value, onChange, label }: QuantityInputProps) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = parseFloat(event.target.value);
     if (!isNaN(newValue) && newValue > 0) {

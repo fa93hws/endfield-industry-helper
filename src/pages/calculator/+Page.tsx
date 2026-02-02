@@ -1,12 +1,12 @@
 import { Typography, Stack } from '@mui/material';
-import AppLayout from '@ui/layout/app_layout';
+import { AppLayout } from '@ui/layout/app_layout';
 import { useCalculator } from './calculator_state';
-import DesiredOutputsSection from './desired_outputs_section';
-import ProductionChainSection from './production_chain_section';
-import NaturalResourcesSection from './natural_resources_section';
+import { DesiredOutputsSection } from './desired_outputs_section';
+import { ProductionChainSection } from './production_chain_section';
+import { NaturalResourcesSection } from './natural_resources_section';
 import { AicProductKey } from '@data/items/aic';
 
-export default function Page() {
+export function Page() {
   const {
     desiredOutputs,
     naturalResources,

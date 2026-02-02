@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import RecipeItem from '../../../src/ui/recipe/recipe_item';
+import { RecipeItem } from '../../../src/ui/recipe/recipe_item';
 import { Receipt } from '@data/receipts/type';
 
 describe('RecipeItem', () => {

@@ -22,7 +22,7 @@ interface AppLayoutProps {
   current: RouteKind;
 }
 
-export default function AppLayout({ children, current }: AppLayoutProps) {
+export function AppLayout({ children, current }: AppLayoutProps) {
   const [open, setOpen] = useState(false);
 
   const handleDrawerToggle = () => {

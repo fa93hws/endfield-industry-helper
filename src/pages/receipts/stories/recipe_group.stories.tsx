@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import RecipeGroup from '../recipe_group';
+import { RecipeGroup } from '../recipe_group';
 import { Receipt } from '@data/receipts/type';
 
 const meta = {

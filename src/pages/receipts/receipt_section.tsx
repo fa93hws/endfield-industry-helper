@@ -1,7 +1,7 @@
 import { Receipt } from '@data/receipts/type';
 import { Typography, Stack, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import RecipeGroup from './recipe_group';
+import { RecipeGroup } from './recipe_group';
 import { sortReceiptsByOutput } from '@data/receipts/sort';
 
 interface ReceiptSectionProps {
@@ -10,7 +10,7 @@ interface ReceiptSectionProps {
   searchQuery?: string;
 }
 
-export default function ReceiptSection({ title, recipes, searchQuery = '' }: ReceiptSectionProps) {
+export function ReceiptSection({ title, recipes, searchQuery = '' }: ReceiptSectionProps) {
   const sortedReceipts = sortReceiptsByOutput(recipes);
 
   // Group receipts by output item

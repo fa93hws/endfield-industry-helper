@@ -1,8 +1,8 @@
-import AppLayout from '@ui/layout/app_layout';
+import { AppLayout } from '@ui/layout/app_layout';
 import { Link, Typography, Box, Stack } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-export default function Page() {
+export function Page() {
   return (
     <AppLayout current="items">
       <Typography variant="h4" gutterBottom>

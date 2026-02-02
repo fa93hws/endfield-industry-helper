@@ -1,6 +1,6 @@
 import { Stack, Button, Paper, Typography } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-import DesiredOutputRow from './desired_output_row';
+import { DesiredOutputRow } from './desired_output_row';
 import { DesiredOutput } from './calculator_state';
 import { AicProductKey } from '@data/items/aic';
 
@@ -12,7 +12,7 @@ interface DesiredOutputsSectionProps {
   onRemove: (id: string) => void;
 }
 
-export default function DesiredOutputsSection({
+export function DesiredOutputsSection({
   desiredOutputs,
   onAdd,
   onItemChange,

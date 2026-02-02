@@ -9,7 +9,7 @@ interface ItemSelectorProps {
   placeholder?: string;
 }
 
-export default function ItemSelector({ value, onChange, label, placeholder }: ItemSelectorProps) {
+export function ItemSelector({ value, onChange, label, placeholder }: ItemSelectorProps) {
   const items = Object.entries(allProduces).map(([key, name]) => ({
     key: key as AicProductKey,
     name,

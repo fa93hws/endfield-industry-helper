@@ -7,7 +7,7 @@ interface NaturalResourceItemProps {
   quantity: number;
 }
 
-export default function NaturalResourceItem({ item, quantity }: NaturalResourceItemProps) {
+export function NaturalResourceItem({ item, quantity }: NaturalResourceItemProps) {
   return (
     <Stack direction="row" spacing={2} alignItems="center">
       <Avatar

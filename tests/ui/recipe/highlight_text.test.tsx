@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import HighlightText from '../../../src/ui/recipe/highlight_text';
+import { HighlightText } from '../../../src/ui/recipe/highlight_text';
 
 describe('HighlightText', () => {
   it('should render plain text when query is empty', () => {

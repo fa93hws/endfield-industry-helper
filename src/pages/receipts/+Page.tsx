@@ -1,13 +1,13 @@
 import { useState, useMemo } from 'react';
-import AppLayout from '@ui/layout/app_layout';
+import { AppLayout } from '@ui/layout/app_layout';
 import { receiptSections } from '@data/receipts';
 import { Typography, Stack, TextField, InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import ReceiptSection from './receipt_section';
+import { ReceiptSection } from './receipt_section';
 import { allProduces } from '@data/items/aic';
 import { naturalItems } from '@data/items/natural';
 
-export default function Page() {
+export function Page() {
   const [searchQuery, setSearchQuery] = useState('');
 
   // Combine all items for name lookup

@@ -1,5 +1,5 @@
 import { Stack, Paper, Typography } from '@mui/material';
-import RecipeSelectionCard from './recipe_selection_card';
+import { RecipeSelectionCard } from './recipe_selection_card';
 import { IntermediateProduct, ProductionNode } from './calculator_utils';
 import { AicProductKey } from '@data/items/aic';
 import { Receipt } from '@data/receipts/type';
@@ -11,7 +11,7 @@ interface ProductionChainSectionProps {
   onRecipeChange: (item: AicProductKey, recipe: Receipt) => void;
 }
 
-export default function ProductionChainSection({
+export function ProductionChainSection({
   intermediateProducts,
   productionTrees,
   onRecipeChange,

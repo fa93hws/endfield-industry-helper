@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import HighlightText from '../highlight_text';
+import { HighlightText } from '../highlight_text';
 import { Box } from '@mui/material';
 
 const meta = {

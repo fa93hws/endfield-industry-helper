@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ReceiptSection from '../receipt_section';
+import { ReceiptSection } from '../receipt_section';
 import { Receipt } from '@data/receipts/type';
 import { Stack } from '@mui/material';
 

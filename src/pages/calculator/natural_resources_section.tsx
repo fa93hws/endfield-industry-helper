@@ -1,5 +1,5 @@
 import { Stack, Paper, Typography } from '@mui/material';
-import NaturalResourceItem from './natural_resource_item';
+import { NaturalResourceItem } from './natural_resource_item';
 import { NaturalItemKey, ores, plants } from '@data/items/natural';
 
 interface NaturalResourcesSectionProps {
@@ -27,9 +27,7 @@ function sortNaturalResources(a: [NaturalItemKey, number], b: [NaturalItemKey, n
   return itemA.localeCompare(itemB);
 }
 
-export default function NaturalResourcesSection({
-  naturalResources,
-}: NaturalResourcesSectionProps) {
+export function NaturalResourcesSection({ naturalResources }: NaturalResourcesSectionProps) {
   const resources = Array.from(naturalResources.entries()).sort(sortNaturalResources);
 
   if (resources.length === 0) {

@@ -24,5 +24,19 @@ export default tseslint.config(
       semi: ['error', 'always'],
     },
   },
+  {
+    // Apply no-default-export rule to most files
+    files: ['**/*.{ts,tsx}'],
+    ignores: ['**/*.stories.tsx', '**/*.config.ts', '**/declarations.d.ts', 'config/storybook/**'],
+    rules: {
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'ExportDefaultDeclaration',
+          message: 'Default exports are not allowed. Use named exports instead.',
+        },
+      ],
+    },
+  },
   prettier,
 );

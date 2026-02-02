@@ -9,14 +9,14 @@ import {
   AccordionDetails,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import RecipeItem from '@ui/recipe/recipe_item';
+import { RecipeItem } from '@ui/recipe/recipe_item';
 
 interface RecipeGroupProps {
   recipes: Receipt[];
   searchQuery?: string;
 }
 
-export default function RecipeGroup({ recipes, searchQuery = '' }: RecipeGroupProps) {
+export function RecipeGroup({ recipes, searchQuery = '' }: RecipeGroupProps) {
   const firstRecipe = recipes[0];
   const remainingRecipes = recipes.slice(1);
   const hasMore = remainingRecipes.length > 0;

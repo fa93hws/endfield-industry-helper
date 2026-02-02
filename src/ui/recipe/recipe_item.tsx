@@ -4,7 +4,7 @@ import { naturalItems } from '@data/items/natural';
 import { Receipt } from '@data/receipts/type';
 import { Box, Typography, Stack, Avatar } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import HighlightText from './highlight_text';
+import { HighlightText } from './highlight_text';
 
 interface RecipeItemProps {
   recipe: Receipt;
@@ -13,7 +13,7 @@ interface RecipeItemProps {
 
 const allItems = { ...naturalItems, ...allProduces };
 
-export default function RecipeItem({ recipe, searchQuery = '' }: RecipeItemProps) {
+export function RecipeItem({ recipe, searchQuery = '' }: RecipeItemProps) {
   return (
     <Stack direction="row" spacing={2} alignItems="center" flexWrap="wrap">
       {/* Inputs */}

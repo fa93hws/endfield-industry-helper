@@ -1,7 +1,7 @@
 import { Stack, IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import ItemSelector from './item_selector';
-import QuantityInput from './quantity_input';
+import { ItemSelector } from './item_selector';
+import { QuantityInput } from './quantity_input';
 import { AicProductKey } from '@data/items/aic';
 
 interface DesiredOutputRowProps {
@@ -12,7 +12,7 @@ interface DesiredOutputRowProps {
   onRemove: () => void;
 }
 
-export default function DesiredOutputRow({
+export function DesiredOutputRow({
   item,
   quantity,
   onItemChange,

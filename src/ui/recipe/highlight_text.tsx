@@ -9,7 +9,7 @@ interface HighlightTextProps {
 /**
  * Component that highlights matching text based on search query
  */
-export default function HighlightText({ text, query, variant = 'body2' }: HighlightTextProps) {
+export function HighlightText({ text, query, variant = 'body2' }: HighlightTextProps) {
   if (!query.trim()) {
     return (
       <Typography variant={variant} noWrap>
