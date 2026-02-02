@@ -1,11 +1,5 @@
 import { Receipt } from '@data/receipts/type';
-import {
-  Typography,
-  Stack,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-} from '@mui/material';
+import { Typography, Stack, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import RecipeGroup from './recipe_group';
 import { sortReceiptsByOutput } from '@data/receipts/sort';
