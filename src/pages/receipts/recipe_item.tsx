@@ -27,11 +27,7 @@ export default function RecipeItem({ recipe, searchQuery = '' }: RecipeItemProps
               sx={{ width: 32, height: 32 }}
             />
             <Box>
-              <HighlightText
-                text={allItems[input.item]}
-                query={searchQuery}
-                variant="body2"
-              />
+              <HighlightText text={allItems[input.item]} query={searchQuery} variant="body2" />
               <Typography variant="caption" color="text.secondary">
                 {input.perMin}/min
               </Typography>
@@ -59,11 +55,7 @@ export default function RecipeItem({ recipe, searchQuery = '' }: RecipeItemProps
               sx={{ width: 32, height: 32 }}
             />
             <Box>
-              <HighlightText
-                text={allItems[output.item]}
-                query={searchQuery}
-                variant="body2"
-              />
+              <HighlightText text={allItems[output.item]} query={searchQuery} variant="body2" />
               <Typography variant="caption" color="text.secondary">
                 {output.perMin}/min
               </Typography>

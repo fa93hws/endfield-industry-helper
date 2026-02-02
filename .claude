@@ -42,6 +42,7 @@ pnpm page:dev
 
 ## Guidelines
 - Always run `pnpm lint:ts:type` to verify TypeScript types
+- Always run `pnpm lint:ts` to very eslint
 - Always run `pnpm format:fix` to format code
 - Use import aliases: `@ui/*` for UI components, `@data/*` for data
 - File naming convention: snake_case (e.g., `app_layout.tsx`)
