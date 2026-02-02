@@ -24,7 +24,12 @@ export default function ItemSelector({ value, onChange, label, placeholder }: It
       renderOption={(props, option) => {
         const { key, ...otherProps } = props;
         return (
-          <Box component="li" key={key} {...otherProps} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+          <Box
+            component="li"
+            key={key}
+            {...otherProps}
+            sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+          >
             <Avatar
               src={images[option.key]}
               alt={option.name}

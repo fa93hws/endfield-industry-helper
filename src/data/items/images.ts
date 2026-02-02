@@ -1,6 +1,6 @@
 import type { AicProductKey } from './aic';
 import type { NaturalItemKey } from './natural';
-import AketinePowder from './assets/Aketine_Powder.png';
+// import AketinePowder from './assets/Aketine_Powder.png';
 import AmethystBottle from './assets/Amethyst_Bottle.png';
 import AmethystComponent from './assets/Amethyst_Component.png';
 import AmethystFiber from './assets/Amethyst_Fiber.png';
@@ -56,7 +56,7 @@ import BuckCapsuleC from './assets/BuckCapsule_C.webp';
 import CannedCitromeA from './assets/CannedCitrome_A.webp';
 import CannedCitromeB from './assets/CannedCitrome_B.webp';
 import CannedCitromeC from './assets/CannedCitrome_C.webp';
-import LCWulingBattery from './assets/LC_Wuling_Battery.webp';
+// import LCWulingBattery from './assets/LC_Wuling_Battery.webp';
 
 export const images: Record<AicProductKey | NaturalItemKey, string> = {
   // 矿石
@@ -98,7 +98,7 @@ export const images: Record<AicProductKey | NaturalItemKey, string> = {
   citromeSeed: CitromeSeed,
 
   // 植物粉末
-  aketinePowder: AketinePowder,
+  // aketinePowder: AketinePowder,
   sandleafPowder: SandleafPowder,
   buckflowerPowder: BuckflowerPowder,
   groundBuckflowerPowder: GroundBucketFlowerPowder,
@@ -123,7 +123,7 @@ export const images: Record<AicProductKey | NaturalItemKey, string> = {
   batteryValleyLc: LCValleyBattery,
   batteryValleySc: SCValleyBattery,
   batteryValleyHc: HCValleyBattery,
-  batteryWulingLc: LCWulingBattery,
+  // batteryWulingLc: LCWulingBattery,
 
   // 零件
   amethystPart: AmethystPart,

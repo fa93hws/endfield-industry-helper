@@ -2,6 +2,10 @@ import { Receipt } from './type';
 
 const carbonReceipts: Receipt[] = [
   {
+    inputs: [{ item: 'carbon', perMin: 30 }],
+    outputs: [{ item: 'carbonPowder', perMin: 30 }],
+  },
+  {
     outputs: [{ item: 'carbon', perMin: 30 }],
     inputs: [{ item: 'sandleaf', perMin: 30 }],
   },
@@ -128,6 +132,10 @@ const ferriumReceipts: Receipt[] = [
   {
     inputs: [{ item: 'steel', perMin: 30 }],
     outputs: [{ item: 'steelPart', perMin: 30 }],
+  },
+  {
+    inputs: [{ item: 'crystonFiber', perMin: 30 }],
+    outputs: [{ item: 'crystonPart', perMin: 30 }],
   },
 ];
 

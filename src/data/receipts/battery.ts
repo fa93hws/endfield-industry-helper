@@ -22,4 +22,8 @@ export const batteryReceipts: Receipt[] = [
     ],
     outputs: [{ item: 'batteryValleyHc', perMin: 6 }],
   },
+  {
+    inputs: [{ item: 'crystonFiber', perMin: 60 }],
+    outputs: [{ item: 'crystonBottle', perMin: 30 }],
+  },
 ];

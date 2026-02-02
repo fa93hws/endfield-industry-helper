@@ -1,21 +1,23 @@
 import { Stack, Paper, Typography } from '@mui/material';
 import RecipeSelectionCard from './recipe_selection_card';
-import { IntermediateProduct } from './calculator_utils';
+import { IntermediateProduct, ProductionNode } from './calculator_utils';
 import { AicProductKey } from '@data/items/aic';
 import { Receipt } from '@data/receipts/type';
+import { topologicalSort } from './topsort_utils';
 
 interface ProductionChainSectionProps {
   intermediateProducts: Map<AicProductKey, IntermediateProduct>;
+  productionTrees: ProductionNode[];
   onRecipeChange: (item: AicProductKey, recipe: Receipt) => void;
 }
 
 export default function ProductionChainSection({
   intermediateProducts,
+  productionTrees,
   onRecipeChange,
 }: ProductionChainSectionProps) {
-  const products = Array.from(intermediateProducts.entries()).sort((a, b) =>
-    a[0].localeCompare(b[0]),
-  );
+  // Topologically sort products by dependency order
+  const products = topologicalSort(Array.from(intermediateProducts.entries()), productionTrees);
 
   if (products.length === 0) {
     return (

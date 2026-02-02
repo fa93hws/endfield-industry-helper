@@ -1,15 +1,36 @@
 import { Stack, Paper, Typography } from '@mui/material';
 import NaturalResourceItem from './natural_resource_item';
-import { NaturalItemKey } from '@data/items/natural';
+import { NaturalItemKey, ores, plants } from '@data/items/natural';
 
 interface NaturalResourcesSectionProps {
   naturalResources: Map<NaturalItemKey, number>;
 }
 
+// Get keys from categorized objects
+const oreKeys = Object.keys(ores) as NaturalItemKey[];
+const plantKeys = Object.keys(plants) as NaturalItemKey[];
+
+function sortNaturalResources(a: [NaturalItemKey, number], b: [NaturalItemKey, number]): number {
+  const [itemA] = a;
+  const [itemB] = b;
+
+  // Determine category
+  const categoryA = oreKeys.includes(itemA) ? 0 : plantKeys.includes(itemA) ? 1 : 2;
+  const categoryB = oreKeys.includes(itemB) ? 0 : plantKeys.includes(itemB) ? 1 : 2;
+
+  // First sort by category
+  if (categoryA !== categoryB) {
+    return categoryA - categoryB;
+  }
+
+  // Within same category, sort alphabetically
+  return itemA.localeCompare(itemB);
+}
+
 export default function NaturalResourcesSection({
   naturalResources,
 }: NaturalResourcesSectionProps) {
-  const resources = Array.from(naturalResources.entries()).sort((a, b) => a[0].localeCompare(b[0]));
+  const resources = Array.from(naturalResources.entries()).sort(sortNaturalResources);
 
   if (resources.length === 0) {
     return (

@@ -9,5 +9,5 @@ export type ReceiptItem = {
 export type Receipt = {
   inputs: ReceiptItem[];
   outputs: ReceiptItem[];
-  // equipment?: string;
+  // factory: string;
 };

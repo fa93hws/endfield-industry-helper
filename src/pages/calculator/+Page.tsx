@@ -11,6 +11,7 @@ export default function Page() {
     desiredOutputs,
     naturalResources,
     intermediateProducts,
+    productionTrees,
     addDesiredOutput,
     removeDesiredOutput,
     updateQuantity,
@@ -44,6 +45,7 @@ export default function Page() {
 
         <ProductionChainSection
           intermediateProducts={intermediateProducts}
+          productionTrees={productionTrees}
           onRecipeChange={selectRecipe}
         />
       </Stack>

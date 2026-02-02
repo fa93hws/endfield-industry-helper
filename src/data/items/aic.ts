@@ -26,7 +26,7 @@ const orePowder = {
 
 const plants = {
   sandleafPowder: '砂叶粉末',
-  aketinePowder: '酮化灌木粉末',
+  // aketinePowder: '酮化灌木粉末',
   buckflowerPowder: '荞花粉末',
   groundBuckflowerPowder: '细磨荞花粉末',
   citromePowder: '柑实粉末',
@@ -46,7 +46,7 @@ const batteries = {
   batteryValleySc: '中容谷底电池',
   // yazhenSolution: '牙珍溶液',
   batteryValleyHc: '高容谷底电池',
-  batteryWulingLc: '低容武陵电池',
+  // batteryWulingLc: '低容武陵电池',
 };
 
 const parts = {
