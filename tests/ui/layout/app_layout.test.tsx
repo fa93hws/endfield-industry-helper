@@ -60,7 +60,7 @@ describe('AppLayout', () => {
       </AppLayout>,
     );
 
-    // Check if navigation item exists
+    // Check if navigation items exist
     const navItems = screen.getAllByText('物品列表');
     // Should have at least one (in the title or nav)
     expect(navItems.length).toBeGreaterThan(0);

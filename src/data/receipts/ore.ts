@@ -3,21 +3,7 @@ import { Receipt } from './type';
 const carbonReceipts: Receipt[] = [
   {
     outputs: [{ item: 'carbon', perMin: 30 }],
-    inputs: [
-      {
-        item: 'buckflower',
-        perMin: 30,
-      },
-    ],
-  },
-  {
-    outputs: [{ item: 'carbon', perMin: 30 }],
-    inputs: [
-      {
-        item: 'sandleaf',
-        perMin: 30,
-      },
-    ],
+    inputs: [{ item: 'sandleaf', perMin: 30 }],
   },
 ];
 
