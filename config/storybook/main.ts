@@ -23,6 +23,7 @@ const config: StorybookConfig = {
         alias: {
           ...config.resolve?.alias,
           '@ui': path.resolve(__dirname, '../../src/ui'),
+          '@data': path.resolve(__dirname, '../../src/data'),
         },
       },
     };

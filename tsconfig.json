@@ -20,7 +20,8 @@
 
     "baseUrl": ".",
     "paths": {
-      "@ui/*": ["src/ui/*"]
+      "@ui/*": ["src/ui/*"],
+      "@data/*": ["src/data/*"]
     }
   },
   "include": ["src"],
