@@ -1,0 +1,47 @@
+# Project Commands
+
+## Type Checking
+Always run type checking before completing tasks:
+```bash
+pnpm lint:ts:type
+```
+
+## Linting
+Run ESLint:
+```bash
+pnpm lint:ts
+```
+
+Fix ESLint issues:
+```bash
+pnpm lint:ts:fix
+```
+
+## Testing
+Run tests:
+```bash
+pnpm test
+```
+
+## Formatting
+Check formatting:
+```bash
+pnpm format
+```
+
+Fix formatting:
+```bash
+pnpm format:fix
+```
+
+## Development
+Start dev server:
+```bash
+pnpm page:dev
+```
+
+## Guidelines
+- Always run `pnpm lint:ts:type` to verify TypeScript types
+- Use import aliases: `@ui/*` for UI components, `@data/*` for data
+- File naming convention: snake_case (e.g., `app_layout.tsx`)
+- Semicolons are required (enforced by Prettier and ESLint)
