@@ -4,8 +4,8 @@
   "description": "Responsive React application with TypeScript and Material-UI",
   "type": "module",
   "scripts": {
-    "page:dev": "vite --config config/vite/vite.config.ts",
-    "page:build": "tsc && vite build --config config/vite/vite.config.ts",
+    "page:dev": "vike dev",
+    "page:build": "tsc && vike build",
     "lint:ts:type": "tsc --noEmit",
     "lint:ts": "eslint . --ext .ts,.tsx --max-warnings 0",
     "lint:ts:fix": "eslint . --ext .ts,.tsx --fix",
@@ -25,7 +25,9 @@
     "@mui/icons-material": "^7.3.7",
     "@mui/material": "^7.3.7",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "vike": "^0.4.208",
+    "vike-react": "^0.5.12"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
