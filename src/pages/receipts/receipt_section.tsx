@@ -7,9 +7,10 @@ import { sortReceiptsByOutput } from '@data/receipts/sort';
 interface ReceiptSectionProps {
   title: string;
   recipes: Receipt[];
+  searchQuery?: string;
 }
 
-export default function ReceiptSection({ title, recipes }: ReceiptSectionProps) {
+export default function ReceiptSection({ title, recipes, searchQuery = '' }: ReceiptSectionProps) {
   const sortedReceipts = sortReceiptsByOutput(recipes);
 
   // Group receipts by output item
@@ -33,7 +34,7 @@ export default function ReceiptSection({ title, recipes }: ReceiptSectionProps) 
       <AccordionDetails>
         <Stack spacing={1}>
           {Object.entries(groupedReceipts).map(([outputKey, recipes]) => (
-            <RecipeGroup key={outputKey} recipes={recipes} />
+            <RecipeGroup key={outputKey} recipes={recipes} searchQuery={searchQuery} />
           ))}
         </Stack>
       </AccordionDetails>

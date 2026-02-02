@@ -4,14 +4,16 @@ import { naturalItems } from '@data/items/natural';
 import { Receipt } from '@data/receipts/type';
 import { Box, Typography, Stack, Avatar } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import HighlightText from './highlight_text';
 
 interface RecipeItemProps {
   recipe: Receipt;
+  searchQuery?: string;
 }
 
 const allItems = { ...naturalItems, ...allProduces };
 
-export default function RecipeItem({ recipe }: RecipeItemProps) {
+export default function RecipeItem({ recipe, searchQuery = '' }: RecipeItemProps) {
   return (
     <Stack direction="row" spacing={2} alignItems="center" flexWrap="wrap">
       {/* Inputs */}
@@ -25,9 +27,11 @@ export default function RecipeItem({ recipe }: RecipeItemProps) {
               sx={{ width: 32, height: 32 }}
             />
             <Box>
-              <Typography variant="body2" noWrap>
-                {allItems[input.item]}
-              </Typography>
+              <HighlightText
+                text={allItems[input.item]}
+                query={searchQuery}
+                variant="body2"
+              />
               <Typography variant="caption" color="text.secondary">
                 {input.perMin}/min
               </Typography>
@@ -55,9 +59,11 @@ export default function RecipeItem({ recipe }: RecipeItemProps) {
               sx={{ width: 32, height: 32 }}
             />
             <Box>
-              <Typography variant="body2" noWrap>
-                {allItems[output.item]}
-              </Typography>
+              <HighlightText
+                text={allItems[output.item]}
+                query={searchQuery}
+                variant="body2"
+              />
               <Typography variant="caption" color="text.secondary">
                 {output.perMin}/min
               </Typography>

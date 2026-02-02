@@ -13,9 +13,10 @@ import RecipeItem from './recipe_item';
 
 interface RecipeGroupProps {
   recipes: Receipt[];
+  searchQuery?: string;
 }
 
-export default function RecipeGroup({ recipes }: RecipeGroupProps) {
+export default function RecipeGroup({ recipes, searchQuery = '' }: RecipeGroupProps) {
   const firstRecipe = recipes[0];
   const remainingRecipes = recipes.slice(1);
   const hasMore = remainingRecipes.length > 0;
@@ -24,7 +25,7 @@ export default function RecipeGroup({ recipes }: RecipeGroupProps) {
     <Paper variant="outlined">
       {/* Always show the first recipe */}
       <Box sx={{ p: 2 }}>
-        <RecipeItem recipe={firstRecipe} />
+        <RecipeItem recipe={firstRecipe} searchQuery={searchQuery} />
       </Box>
 
       {/* Show remaining recipes in accordion if there are more */}
@@ -42,7 +43,7 @@ export default function RecipeGroup({ recipes }: RecipeGroupProps) {
             <Stack spacing={1}>
               {remainingRecipes.map((recipe, idx) => (
                 <Paper key={idx} variant="outlined" sx={{ p: 2 }}>
-                  <RecipeItem recipe={recipe} />
+                  <RecipeItem recipe={recipe} searchQuery={searchQuery} />
                 </Paper>
               ))}
             </Stack>
