@@ -32,7 +32,7 @@ export function NaturalResourcesSection({ naturalResources }: NaturalResourcesSe
 
   if (resources.length === 0) {
     return (
-      <Paper variant="outlined" sx={{ p: 3 }}>
+      <Paper variant="outlined" sx={{ p: { xs: 1, sm: 2 } }}>
         <Typography variant="h6" gutterBottom>
           所需自然资源
         </Typography>
@@ -44,7 +44,7 @@ export function NaturalResourcesSection({ naturalResources }: NaturalResourcesSe
   }
 
   return (
-    <Paper variant="outlined" sx={{ p: 3 }}>
+    <Paper variant="outlined" sx={{ p: { xs: 1, sm: 2 } }}>
       <Typography variant="h6" gutterBottom>
         所需自然资源 ({resources.length})
       </Typography>

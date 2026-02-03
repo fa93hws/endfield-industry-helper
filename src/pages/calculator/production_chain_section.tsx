@@ -21,7 +21,7 @@ export function ProductionChainSection({
 
   if (products.length === 0) {
     return (
-      <Paper variant="outlined" sx={{ p: 3 }}>
+      <Paper variant="outlined" sx={{ p: { xs: 1, sm: 2 } }}>
         <Typography variant="h6" gutterBottom>
           生产链
         </Typography>
@@ -33,7 +33,7 @@ export function ProductionChainSection({
   }
 
   return (
-    <Paper variant="outlined" sx={{ p: 3 }}>
+    <Paper variant="outlined" sx={{ p: { xs: 1, sm: 2 } }}>
       <Typography variant="h6" gutterBottom>
         生产链 ({products.length} 种中间产品)
       </Typography>

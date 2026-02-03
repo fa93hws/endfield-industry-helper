@@ -20,7 +20,7 @@ export function DesiredOutputsSection({
   onRemove,
 }: DesiredOutputsSectionProps) {
   return (
-    <Paper variant="outlined" sx={{ p: 3 }}>
+    <Paper variant="outlined" sx={{ p: { xs: 1, sm: 2 } }}>
       <Typography variant="h6" gutterBottom>
         选择目标产品
       </Typography>

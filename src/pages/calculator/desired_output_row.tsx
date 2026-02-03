@@ -21,13 +21,13 @@ export function DesiredOutputRow({
 }: DesiredOutputRowProps) {
   return (
     <Stack direction="row" spacing={2} alignItems="center" sx={{ maxWidth: 350 }}>
-      <Box sx={{ flex: '0 0 55%' }}>
+      <Box flexGrow={1}>
         <ItemSelector value={item} onChange={onItemChange} />
       </Box>
-      <Box sx={{ flex: '0 0 20%' }}>
+      <Box sx={{ maxWidth: 80 }}>
         <QuantityInput value={quantity} onChange={onQuantityChange} />
       </Box>
-      <Box sx={{ flex: '0 0 25%' }}>
+      <Box sx={{ maxWidth: 40 }}>
         <IconButton onClick={onRemove} color="error">
           <DeleteIcon />
         </IconButton>
