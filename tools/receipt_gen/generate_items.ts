@@ -1,10 +1,4 @@
 import * as fs from 'fs';
-import * as path from 'path';
-import { fileURLToPath } from 'url';
-
-// ES module equivalent of __dirname
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 interface ItemRow {
   category: string;
@@ -95,28 +89,8 @@ function generateItemsTS(items: ItemRow[]): string {
   return lines.join('\n');
 }
 
-// Main function
-export function genItems() {
-  const csvPath = path.join(__dirname, 'csv', 'items.csv');
-  const outputPath = path.join(__dirname, '../../src/receipts/generated/items.ts');
-
-  console.log('Reading items from:', csvPath);
-
-  // Parse CSV
+// Main function - returns generated content
+export function genItems(csvPath: string): string {
   const items = parseItemsCSV(csvPath);
-  console.log(`Parsed ${items.length} items`);
-
-  // Generate TypeScript code
-  const tsCode = generateItemsTS(items);
-
-  // Ensure output directory exists
-  const outputDir = path.dirname(outputPath);
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-  }
-
-  // Write output file
-  fs.writeFileSync(outputPath, tsCode, 'utf-8');
-  console.log('Generated:', outputPath);
-  console.log('Done!');
+  return generateItemsTS(items);
 }

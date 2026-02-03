@@ -1,10 +1,4 @@
 import * as fs from 'fs';
-import * as path from 'path';
-import { fileURLToPath } from 'url';
-
-// ES module equivalent of __dirname
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 interface ReceiptRow {
   out1Item: string;
@@ -55,7 +49,6 @@ function generateReceiptsTS(receipts: ReceiptRow[]): string {
   // Add file header
   lines.push('// This file is auto-generated. Do not edit manually.');
   lines.push('// Generated from tools/receipt_gen/csv/receipts.csv');
-  lines.push('// Output: src/receipts/generated/receipts.ts');
   lines.push('');
 
   // Add interfaces
@@ -101,28 +94,8 @@ function generateReceiptsTS(receipts: ReceiptRow[]): string {
   return lines.join('\n');
 }
 
-// Main function
-export function genReceipts() {
-  const csvPath = path.join(__dirname, 'csv', 'receipts.csv');
-  const outputPath = path.join(__dirname, '../../src/receipts/generated/receipts.ts');
-
-  console.log('Reading receipts from:', csvPath);
-
-  // Parse CSV
+// Main function - returns generated content
+export function genReceipts(csvPath: string): string {
   const receipts = parseReceiptsCSV(csvPath);
-  console.log(`Parsed ${receipts.length} receipts`);
-
-  // Generate TypeScript code
-  const tsCode = generateReceiptsTS(receipts);
-
-  // Ensure output directory exists
-  const outputDir = path.dirname(outputPath);
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-  }
-
-  // Write output file
-  fs.writeFileSync(outputPath, tsCode, 'utf-8');
-  console.log('Generated:', outputPath);
-  console.log('Done!');
+  return generateReceiptsTS(receipts);
 }
