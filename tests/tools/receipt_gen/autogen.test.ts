@@ -1,10 +1,10 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { describe, expect, it } from 'vitest';
-import { genItems } from '../../tools/receipt_gen/generate_items';
-import { genReceipts } from '../../tools/receipt_gen/generate_receipts';
+import { genItems } from '../../../tools/receipt_gen/generate_items';
+import { genReceipts } from '../../../tools/receipt_gen/generate_receipts';
 
-const repoRoot = path.resolve(__dirname, '../..');
+const repoRoot = path.resolve(__dirname, '../../..');
 
 describe('Auto-generated files', () => {
   it('should be up to date with CSV sources', () => {
