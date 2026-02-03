@@ -1,6 +1,6 @@
 import { Avatar, Box, Stack, Typography } from '@mui/material';
 import { images } from '@data/items/images';
-import { NaturalItemKey, naturalItems } from '@data/items/natural';
+import { naturalItems, type NaturalItemKey } from '@data/items/natural';
 
 interface NaturalResourceItemProps {
   item: NaturalItemKey;

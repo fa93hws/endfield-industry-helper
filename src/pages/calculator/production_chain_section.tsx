@@ -1,7 +1,7 @@
 import { Paper, Stack, Typography } from '@mui/material';
-import { AicProductKey } from '@data/items/aic';
-import { Receipt } from '@data/receipts/type';
-import { IntermediateProduct, ProductionNode } from './calculator_utils';
+import type { AicProductKey } from '@data/items/aic';
+import type { Receipt } from '@data/receipts/type';
+import type { IntermediateProduct, ProductionNode } from './calculator_utils';
 import { RecipeSelectionCard } from './recipe_selection_card';
 import { topologicalSort } from './topsort_utils';
 

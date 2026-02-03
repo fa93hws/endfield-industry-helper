@@ -1,6 +1,6 @@
 import { Stack } from '@mui/material';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Receipt } from '@data/receipts/type';
+import type { Receipt } from '@data/receipts/type';
 import { ReceiptSection } from '../receipt_section';
 
 const meta = {

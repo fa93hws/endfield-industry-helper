@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import { AicProductKey } from '@data/items/aic';
-import { NaturalItemKey } from '@data/items/natural';
-import { Receipt } from '@data/receipts/type';
-import {
+import type { AicProductKey } from '@data/items/aic';
+import type { NaturalItemKey } from '@data/items/natural';
+import type { Receipt } from '@data/receipts/type';
+import type {
   IntermediateProduct,
   ProductionNode,
 } from '../../../src/pages/calculator/calculator_utils';

@@ -1,7 +1,7 @@
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Accordion, AccordionDetails, AccordionSummary, Stack, Typography } from '@mui/material';
 import { sortReceiptsByOutput } from '@data/receipts/sort';
-import { Receipt } from '@data/receipts/type';
+import type { Receipt } from '@data/receipts/type';
 import { RecipeGroup } from './recipe_group';
 
 interface ReceiptSectionProps {

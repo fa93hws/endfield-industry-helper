@@ -2,7 +2,7 @@ import { batteryReceipts } from './battery';
 import { components } from './component';
 import { medicineReceipts, plantReceipts } from './medicine';
 import { bottleReceipts, oreReceipts } from './ore';
-import { Receipt } from './type';
+import type { Receipt } from './type';
 
 export const allReceipts = [
   ...oreReceipts,

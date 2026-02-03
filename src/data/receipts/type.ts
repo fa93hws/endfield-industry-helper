@@ -1,5 +1,5 @@
-import { AicProductKey } from '@data/items/aic';
-import { NaturalItemKey } from '@data/items/natural';
+import type { AicProductKey } from '@data/items/aic';
+import type { NaturalItemKey } from '@data/items/natural';
 
 export type ReceiptItem = {
   item: AicProductKey | NaturalItemKey;

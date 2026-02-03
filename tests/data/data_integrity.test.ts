@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { AicProductKey, allProduces } from '@data/items/aic';
+import { allProduces, type AicProductKey } from '@data/items/aic';
 import { naturalItems } from '@data/items/natural';
 import { allReceipts } from '@data/receipts';
 

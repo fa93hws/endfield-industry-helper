@@ -1,7 +1,7 @@
 import AddIcon from '@mui/icons-material/Add';
 import { Button, Paper, Stack, Typography } from '@mui/material';
-import { AicProductKey } from '@data/items/aic';
-import { DesiredOutput } from './calculator_state';
+import type { AicProductKey } from '@data/items/aic';
+import type { DesiredOutput } from './calculator_state';
 import { DesiredOutputRow } from './desired_output_row';
 
 interface DesiredOutputsSectionProps {

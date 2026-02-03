@@ -1,4 +1,4 @@
-import { Receipt } from './type';
+import type { Receipt } from './type';
 
 export const plantReceipts: Receipt[] = [
   { inputs: [{ item: 'sandleaf', perMin: 30 }], outputs: [{ item: 'sandleafPowder', perMin: 30 }] },

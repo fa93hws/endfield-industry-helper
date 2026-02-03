@@ -3,7 +3,7 @@ import { Avatar, Box, Stack, Typography } from '@mui/material';
 import { allProduces } from '@data/items/aic';
 import { images } from '@data/items/images';
 import { naturalItems } from '@data/items/natural';
-import { Receipt } from '@data/receipts/type';
+import type { Receipt } from '@data/receipts/type';
 import { HighlightText } from './highlight_text';
 
 interface RecipeItemProps {

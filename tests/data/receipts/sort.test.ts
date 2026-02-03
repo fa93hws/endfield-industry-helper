@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { sortReceiptsByOutput } from '@data/receipts/sort';
-import { Receipt } from '@data/receipts/type';
+import type { Receipt } from '@data/receipts/type';
 
 describe('sortReceiptsByOutput', () => {
   it('should sort receipts by output item name in English alphabetical order', () => {

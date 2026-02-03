@@ -1,4 +1,4 @@
-import { Receipt } from './type';
+import type { Receipt } from './type';
 
 export const batteryReceipts: Receipt[] = [
   {

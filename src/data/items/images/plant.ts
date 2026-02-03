@@ -1,5 +1,5 @@
 import type { PlantPowderKey } from '../aic';
-import { PlantKey, PlantSeedKey } from '../natural';
+import type { PlantKey, PlantSeedKey } from '../natural';
 import BuckflowerPowder from './assets/Buckflower_Powder.png';
 import BuckflowerSeed from './assets/Buckflower_Seed.png';
 import Buckflower from './assets/Buckflower.png';
