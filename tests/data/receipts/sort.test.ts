@@ -1,35 +1,35 @@
+import { sortReceiptsByOutput, type Receipt } from '@receipts';
 import { describe, expect, it } from 'vitest';
-import { sortReceiptsByOutput } from '@data/receipts/sort';
-import type { Receipt } from '@data/receipts/type';
 
 describe('sortReceiptsByOutput', () => {
-  it('should sort receipts by output item name in English alphabetical order', () => {
+  it('should sort receipts by output item name in Chinese alphabetical order', () => {
     const receipts: Receipt[] = [
       {
         inputs: [{ item: 'buckflower', perMin: 30 }],
         outputs: [{ item: 'carbon', perMin: 30 }],
       },
       {
-        inputs: [{ item: 'amethystOre', perMin: 30 }],
-        outputs: [{ item: 'amethystFiber', perMin: 30 }],
+        inputs: [{ item: 'amethyst_ore', perMin: 30 }],
+        outputs: [{ item: 'amethyst_fiber', perMin: 30 }],
       },
       {
         outputs: [{ item: 'carbon', perMin: 30 }],
         inputs: [{ item: 'sandleaf', perMin: 30 }],
       },
       {
-        inputs: [{ item: 'ferriumOre', perMin: 30 }],
+        inputs: [{ item: 'ferrium_ore', perMin: 30 }],
         outputs: [{ item: 'ferrium', perMin: 30 }],
       },
     ];
 
     const sorted = sortReceiptsByOutput(receipts);
 
-    // Check that the order is: amethystFiber < carbon < carbon < ferrium
-    expect(sorted[0].outputs[0].item).toBe('amethystFiber');
+    // Check that items are sorted by their Chinese labels
+    // ferrium (铁), carbon (碳), amethyst_fiber (紫晶纤维)
+    expect(sorted[0].outputs[0].item).toBe('ferrium');
     expect(sorted[1].outputs[0].item).toBe('carbon');
     expect(sorted[2].outputs[0].item).toBe('carbon');
-    expect(sorted[3].outputs[0].item).toBe('ferrium');
+    expect(sorted[3].outputs[0].item).toBe('amethyst_fiber');
   });
 
   it('should not mutate the original array', () => {
@@ -39,8 +39,8 @@ describe('sortReceiptsByOutput', () => {
         outputs: [{ item: 'carbon', perMin: 30 }],
       },
       {
-        inputs: [{ item: 'amethystOre', perMin: 30 }],
-        outputs: [{ item: 'amethystFiber', perMin: 30 }],
+        inputs: [{ item: 'amethyst_ore', perMin: 30 }],
+        outputs: [{ item: 'amethyst_fiber', perMin: 30 }],
       },
     ];
 

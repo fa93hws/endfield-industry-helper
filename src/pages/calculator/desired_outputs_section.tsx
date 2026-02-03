@@ -1,6 +1,6 @@
 import AddIcon from '@mui/icons-material/Add';
 import { Button, Paper, Stack, Typography } from '@mui/material';
-import type { AicProductKey } from '@data/items/aic';
+import type { AicProductKey } from '@receipts';
 import type { DesiredOutput } from './calculator_state';
 import { DesiredOutputRow } from './desired_output_row';
 

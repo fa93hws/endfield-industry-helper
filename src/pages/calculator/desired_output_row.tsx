@@ -1,6 +1,6 @@
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Box, IconButton, Stack } from '@mui/material';
-import type { AicProductKey } from '@data/items/aic';
+import type { AicProductKey } from '@receipts';
 import { ItemSelector } from './item_selector';
 import { QuantityInput } from './quantity_input';
 

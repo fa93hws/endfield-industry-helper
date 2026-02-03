@@ -1,9 +1,7 @@
 import { useMemo, useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { InputAdornment, Stack, TextField, Typography } from '@mui/material';
-import { allProduces } from '@data/items/aic';
-import { naturalItems } from '@data/items/natural';
-import { receiptSections } from '@data/receipts';
+import { allProduces, naturalItems, receiptSections } from '@receipts';
 import { AppLayout } from '@ui/layout/app_layout';
 import { ReceiptSection } from './receipt_section';
 

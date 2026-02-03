@@ -1,5 +1,5 @@
 import { Stack, Typography } from '@mui/material';
-import type { AicProductKey } from '@data/items/aic';
+import type { AicProductKey } from '@receipts';
 import { AppLayout } from '@ui/layout/app_layout';
 import { useCalculator } from './calculator_state';
 import { DesiredOutputsSection } from './desired_outputs_section';

@@ -1,4 +1,4 @@
-import type { AicProductKey } from '@data/items/aic';
+import type { AicProductKey } from '@receipts';
 import type { IntermediateProduct, ProductionNode } from './calculator_utils';
 
 /**

@@ -1,7 +1,10 @@
-import type { AicProductKey } from '@data/items/aic';
-import { naturalItems, type NaturalItemKey } from '@data/items/natural';
-import { allReceipts } from '@data/receipts';
-import type { Receipt } from '@data/receipts/type';
+import {
+  allReceipts,
+  naturalItems,
+  type AicProductKey,
+  type NaturalItemKey,
+  type Receipt,
+} from '@receipts';
 
 export interface ProductionNode {
   item: AicProductKey | NaturalItemKey;

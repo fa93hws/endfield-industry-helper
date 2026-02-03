@@ -11,8 +11,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-import { allProduces, type AicProductKey } from '@data/items/aic';
-import type { Receipt } from '@data/receipts/type';
+import { allProduces, type AicProductKey, type Receipt } from '@receipts';
 import { RecipeItem } from '@ui/recipe/recipe_item';
 
 interface RecipeSelectionCardProps {

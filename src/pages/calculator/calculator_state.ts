@@ -1,7 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
-import type { AicProductKey } from '@data/items/aic';
-import type { NaturalItemKey } from '@data/items/natural';
-import type { Receipt } from '@data/receipts/type';
+import type { AicProductKey, NaturalItemKey, Receipt } from '@receipts';
 import {
   aggregateIntermediateProducts,
   aggregateNaturalResources,

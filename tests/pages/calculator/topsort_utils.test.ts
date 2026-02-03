@@ -1,7 +1,5 @@
+import type { AicProductKey, NaturalItemKey, Receipt } from '@receipts';
 import { describe, expect, it } from 'vitest';
-import type { AicProductKey } from '@data/items/aic';
-import type { NaturalItemKey } from '@data/items/natural';
-import type { Receipt } from '@data/receipts/type';
 import type {
   IntermediateProduct,
   ProductionNode,

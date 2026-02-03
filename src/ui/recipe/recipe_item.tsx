@@ -1,9 +1,6 @@
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Avatar, Box, Stack, Typography } from '@mui/material';
-import { allProduces } from '@data/items/aic';
-import { images } from '@data/items/images';
-import { naturalItems } from '@data/items/natural';
-import type { Receipt } from '@data/receipts/type';
+import { allProduces, images, naturalItems, type Receipt } from '@receipts';
 import { HighlightText } from './highlight_text';
 
 interface RecipeItemProps {

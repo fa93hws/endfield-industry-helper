@@ -1,5 +1,5 @@
 import { Paper, Stack, Typography } from '@mui/material';
-import { ores, plants, type NaturalItemKey } from '@data/items/natural';
+import { ores, plants, type NaturalItemKey } from '@receipts';
 import { NaturalResourceItem } from './natural_resource_item';
 
 interface NaturalResourcesSectionProps {

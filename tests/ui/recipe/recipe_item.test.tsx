@@ -1,6 +1,6 @@
+import type { Receipt } from '@receipts';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import type { Receipt } from '@data/receipts/type';
 import { RecipeItem } from '../../../src/ui/recipe/recipe_item';
 
 describe('RecipeItem', () => {

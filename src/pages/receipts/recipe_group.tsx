@@ -8,7 +8,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-import type { Receipt } from '@data/receipts/type';
+import type { Receipt } from '@receipts';
 import { RecipeItem } from '@ui/recipe/recipe_item';
 
 interface RecipeGroupProps {

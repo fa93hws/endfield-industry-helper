@@ -1,6 +1,5 @@
 import { Paper, Stack, Typography } from '@mui/material';
-import type { AicProductKey } from '@data/items/aic';
-import type { Receipt } from '@data/receipts/type';
+import type { AicProductKey, Receipt } from '@receipts';
 import type { IntermediateProduct, ProductionNode } from './calculator_utils';
 import { RecipeSelectionCard } from './recipe_selection_card';
 import { topologicalSort } from './topsort_utils';

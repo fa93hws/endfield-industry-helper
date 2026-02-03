@@ -1,7 +1,7 @@
+import type { Receipt } from '@receipts';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
-import type { Receipt } from '@data/receipts/type';
 import { RecipeGroup } from '../../../src/pages/receipts/recipe_group';
 
 describe('RecipeGroup', () => {
