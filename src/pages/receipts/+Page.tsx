@@ -1,14 +1,28 @@
 import * as React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
-import { InputAdornment, Stack, TextField, Typography } from '@mui/material';
+import { IconButton, InputAdornment, Stack, TextField, Typography } from '@mui/material';
 import { items } from '@receipts/generated/items';
 import { receipts } from '@receipts/generated/receipts';
 import { groupReceiptsByCategory } from '@receipts/helper';
+import { usePageContext } from 'vike-react/usePageContext';
+import { navigate } from 'vike/client/router';
 import { AppLayout } from '@ui/layout/app_layout';
 import { ReceiptSection } from './receipt_section';
 
 export function Page() {
-  const [searchQuery, setSearchQuery] = React.useState('');
+  const pageContext = usePageContext();
+  const urlQuery = (pageContext.urlParsed.search.q as string) || '';
+
+  // Local state for input value
+  const [inputValue, setInputValue] = React.useState(urlQuery);
+
+  // Sync input when URL changes (e.g., browser back/forward)
+  React.useEffect(() => {
+    setInputValue(urlQuery);
+  }, [urlQuery]);
+
+  // Use URL query for filtering
+  const searchQuery = urlQuery;
   const receiptSections = React.useMemo(() => groupReceiptsByCategory(receipts, items), []);
 
   // Filter recipes based on search query
@@ -40,10 +54,34 @@ export function Page() {
       .filter((section) => section.recipes.length > 0); // Only show sections with matching recipes
   }, [searchQuery, receiptSections]);
 
-  const onChange = React.useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value),
-    [],
+  const updateURL = React.useCallback((query: string) => {
+    const searchParams = new URLSearchParams();
+
+    if (query) {
+      searchParams.set('q', query);
+    }
+
+    navigate(`/receipts?${searchParams.toString()}`, {
+      keepScrollPosition: true,
+    });
+  }, []);
+
+  const onChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+  }, []);
+
+  const onKeyDown = React.useCallback(
+    (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === 'Enter') {
+        updateURL(inputValue);
+      }
+    },
+    [inputValue, updateURL],
   );
+
+  const handleSearchClick = React.useCallback(() => {
+    updateURL(inputValue);
+  }, [inputValue, updateURL]);
 
   return (
     <AppLayout current="receipts">
@@ -54,15 +92,21 @@ export function Page() {
       <TextField
         fullWidth
         placeholder="搜索配方... (输入物品名称)"
-        value={searchQuery}
+        value={inputValue}
         onChange={onChange}
+        onKeyDown={onKeyDown}
         slotProps={{
           input: {
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon />
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton edge="end" onClick={handleSearchClick} aria-label="搜索" size="small">
+                  <SearchIcon />
+                </IconButton>
               </InputAdornment>
             ),
+          },
+          htmlInput: {
+            enterKeyHint: 'search',
           },
         }}
         sx={{ mb: 3 }}
@@ -79,7 +123,7 @@ export function Page() {
               key={section.title}
               title={section.title}
               recipes={section.recipes}
-              searchQuery={searchQuery}
+              searchQuery={urlQuery}
             />
           ))
         )}

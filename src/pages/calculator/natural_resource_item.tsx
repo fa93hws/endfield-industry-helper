@@ -15,7 +15,7 @@ export function NaturalResourceItem({ item, quantity }: NaturalResourceItemProps
         variant="square"
         sx={{ width: 32, height: 32 }}
       />
-      <Box sx={{ flexGrow: 1 }}>
+      <Box>
         <Typography variant="body1">{naturalItems[item]}</Typography>
       </Box>
       <Typography variant="body2" color="text.secondary">
