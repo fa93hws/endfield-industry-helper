@@ -39,11 +39,13 @@ const multipleRecipes: Receipt[] = [
 export const SingleRecipe: Story = {
   args: {
     recipes: singleRecipe,
+    searchQuery: '',
   },
 };
 
 export const MultipleRecipes: Story = {
   args: {
     recipes: multipleRecipes,
+    searchQuery: '',
   },
 };

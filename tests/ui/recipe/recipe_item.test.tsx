@@ -62,7 +62,7 @@ describe('RecipeItem', () => {
     // When highlighting is applied, the text gets split into separate elements
     // So we use a text function that can match split text
     expect(
-      screen.getByText((content, element) => {
+      screen.getByText((_, element) => {
         return element?.textContent === '荞花';
       }),
     ).toBeInTheDocument();

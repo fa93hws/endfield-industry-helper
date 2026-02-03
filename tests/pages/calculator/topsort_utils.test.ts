@@ -1,4 +1,4 @@
-import type { AicProductKey, NaturalItemKey, Receipt } from '@receipts';
+import type { Receipt } from '@receipts/generated/receipts';
 import { describe, expect, it } from 'vitest';
 import type {
   IntermediateProduct,
@@ -19,8 +19,8 @@ describe('Topological Sort', () => {
   // Helper function to create a simple recipe
   function createRecipe(inputs: string[], output: string): Receipt {
     return {
-      inputs: inputs.map((item) => ({ item: item as AicProductKey | NaturalItemKey, perMin: 30 })),
-      outputs: [{ item: output as AicProductKey | NaturalItemKey, perMin: 30 }],
+      inputs: inputs.map((item) => ({ item: item, perMin: 30 })),
+      outputs: [{ item: output, perMin: 30 }],
     };
   }
 
@@ -57,10 +57,7 @@ describe('Topological Sort', () => {
       ['carbon', createProduct(carbonRecipe)],
     ];
 
-    const sorted = topologicalSort(
-      items as [AicProductKey, IntermediateProduct][],
-      productionTrees,
-    );
+    const sorted = topologicalSort(items, productionTrees);
 
     // carbon should come before denseCarbonPowder (carbon is needed first)
     expect(sorted[0][0]).toBe('carbon');
@@ -106,10 +103,7 @@ describe('Topological Sort', () => {
       ['amethystFiber', createProduct(amethystRecipe)],
     ];
 
-    const sorted = topologicalSort(
-      items as [AicProductKey, IntermediateProduct][],
-      productionTrees,
-    );
+    const sorted = topologicalSort(items, productionTrees);
 
     // Should be sorted alphabetically when at same depth
     expect(sorted[0][0]).toBe('amethystFiber');
@@ -164,10 +158,7 @@ describe('Topological Sort', () => {
       ['amethystFiber', createProduct(fiberRecipe)],
     ];
 
-    const sorted = topologicalSort(
-      items as [AicProductKey, IntermediateProduct][],
-      productionTrees,
-    );
+    const sorted = topologicalSort(items, productionTrees);
 
     // Should be sorted by depth: fiber -> part -> component
     expect(sorted[0][0]).toBe('amethystFiber');
@@ -179,10 +170,7 @@ describe('Topological Sort', () => {
     const productionTrees: ProductionNode[] = [];
     const items: [string, IntermediateProduct][] = [];
 
-    const sorted = topologicalSort(
-      items as [AicProductKey, IntermediateProduct][],
-      productionTrees,
-    );
+    const sorted = topologicalSort(items, productionTrees);
 
     expect(sorted).toHaveLength(0);
   });
@@ -208,10 +196,7 @@ describe('Topological Sort', () => {
 
     const items: [string, IntermediateProduct][] = [['carbon', createProduct(recipe)]];
 
-    const sorted = topologicalSort(
-      items as [AicProductKey, IntermediateProduct][],
-      productionTrees,
-    );
+    const sorted = topologicalSort(items, productionTrees);
 
     expect(sorted).toHaveLength(1);
     expect(sorted[0][0]).toBe('carbon');
@@ -256,10 +241,7 @@ describe('Topological Sort', () => {
       ['amethystPart', createProduct(partRecipe)],
     ];
 
-    const sorted = topologicalSort(
-      items as [AicProductKey, IntermediateProduct][],
-      productionTrees,
-    );
+    const sorted = topologicalSort(items, productionTrees);
 
     // amethystPart should come before amethystComponent
     expect(sorted[0][0]).toBe('amethystPart');
@@ -271,12 +253,12 @@ describe('Topological Sort', () => {
 
     const productionTrees: ProductionNode[] = [
       {
-        item: 'output' as AicProductKey,
+        item: 'output',
         quantity: 30,
         recipe: recipe,
         children: [
           {
-            item: 'input' as AicProductKey,
+            item: 'input',
             quantity: 30,
             recipe: null,
             children: [],
@@ -289,10 +271,7 @@ describe('Topological Sort', () => {
     const items: [string, IntermediateProduct][] = [['output', createProduct(recipe)]];
 
     // Should not throw error
-    const sorted = topologicalSort(
-      items as [AicProductKey, IntermediateProduct][],
-      productionTrees,
-    );
+    const sorted = topologicalSort(items, productionTrees);
     expect(sorted).toHaveLength(1);
     expect(sorted[0][0]).toBe('output');
   });
@@ -307,22 +286,22 @@ describe('Topological Sort', () => {
 
     const productionTrees: ProductionNode[] = [
       {
-        item: 'a' as AicProductKey,
+        item: 'a',
         quantity: 30,
         recipe: aRecipe,
         children: [
           {
-            item: 'b' as AicProductKey,
+            item: 'b',
             quantity: 30,
             recipe: bRecipe,
             children: [
               {
-                item: 'd' as AicProductKey,
+                item: 'd',
                 quantity: 30,
                 recipe: dRecipe,
                 children: [
                   {
-                    item: 'natural' as AicProductKey,
+                    item: 'natural',
                     quantity: 30,
                     recipe: null,
                     children: [],
@@ -332,17 +311,17 @@ describe('Topological Sort', () => {
             ],
           },
           {
-            item: 'c' as AicProductKey,
+            item: 'c',
             quantity: 30,
             recipe: cRecipe,
             children: [
               {
-                item: 'd' as AicProductKey,
+                item: 'd',
                 quantity: 30,
                 recipe: dRecipe,
                 children: [
                   {
-                    item: 'natural' as AicProductKey,
+                    item: 'natural',
                     quantity: 30,
                     recipe: null,
                     children: [],
@@ -362,10 +341,7 @@ describe('Topological Sort', () => {
       ['d', createProduct(dRecipe)],
     ];
 
-    const sorted = topologicalSort(
-      items as [AicProductKey, IntermediateProduct][],
-      productionTrees,
-    );
+    const sorted = topologicalSort(items, productionTrees);
 
     // d should come first (deepest), then b and c (alphabetically), then a
     expect(sorted[0][0]).toBe('d');

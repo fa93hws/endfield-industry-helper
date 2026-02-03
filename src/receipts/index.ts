@@ -21,29 +21,29 @@ function filterItemsByCategory(categories: ItemCategory[]): Record<string, strin
 
 // AIC Products (manufactured items)
 export const allProduces = filterItemsByCategory([
-  ItemCategory.ore_refined,
-  ItemCategory.ore_powder,
-  ItemCategory.plant_powder,
+  ItemCategory.oreRefined,
+  ItemCategory.orePowder,
+  ItemCategory.plantPowder,
   ItemCategory.bottle,
   ItemCategory.battery,
   ItemCategory.part,
   ItemCategory.component,
   ItemCategory.medicine,
   ItemCategory.solution,
-  ItemCategory.bottled_solution,
+  ItemCategory.bottledSolution,
 ]);
 
 // Natural Items (resources)
 export const naturalItems = filterItemsByCategory([
-  ItemCategory.natural_ore,
-  ItemCategory.natural_plant,
-  ItemCategory.plant_seed,
+  ItemCategory.naturalOre,
+  ItemCategory.naturalPlant,
+  ItemCategory.plantSeed,
   ItemCategory.other,
 ]);
 
 // Natural item sub-categories
-export const ores = filterItemsByCategory([ItemCategory.natural_ore]);
-export const plants = filterItemsByCategory([ItemCategory.natural_plant]);
+export const ores = filterItemsByCategory([ItemCategory.naturalOre]);
+export const plants = filterItemsByCategory([ItemCategory.naturalPlant]);
 
 // All receipts
 export const allReceipts = receipts;

@@ -73,6 +73,7 @@ export const OneSection: Story = {
   args: {
     title: '瓶子',
     recipes: bottleRecipes,
+    searchQuery: '',
   },
   render: (args) => (
     <Stack spacing={2}>
@@ -85,11 +86,12 @@ export const TwoSections: Story = {
   args: {
     title: '瓶子',
     recipes: bottleRecipes,
+    searchQuery: '',
   },
   render: () => (
     <Stack spacing={2}>
-      <ReceiptSection title="瓶子" recipes={bottleRecipes} />
-      <ReceiptSection title="装备组件" recipes={componentRecipes} />
+      <ReceiptSection title="瓶子" recipes={bottleRecipes} searchQuery="" />
+      <ReceiptSection title="装备组件" recipes={componentRecipes} searchQuery="" />
     </Stack>
   ),
 };
@@ -98,11 +100,12 @@ export const TwoSectionsWithSharedOutputs: Story = {
   args: {
     title: '矿石',
     recipes: carbonRecipes,
+    searchQuery: '',
   },
   render: () => (
     <Stack spacing={2}>
-      <ReceiptSection title="矿石" recipes={carbonRecipes} />
-      <ReceiptSection title="装备组件" recipes={componentRecipes} />
+      <ReceiptSection title="矿石" recipes={carbonRecipes} searchQuery="" />
+      <ReceiptSection title="装备组件" recipes={componentRecipes} searchQuery="" />
     </Stack>
   ),
 };

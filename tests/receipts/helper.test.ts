@@ -10,17 +10,17 @@ describe('sortReceiptsByOutput', () => {
   const mockItems: Record<string, Item> = {
     carbon: {
       label: '碳',
-      category: ItemCategory.ore_refined,
+      category: ItemCategory.oreRefined,
       imagePath: '/images/items/carbon.webp',
     },
     ferrium: {
       label: '蓝铁锭',
-      category: ItemCategory.ore_refined,
+      category: ItemCategory.oreRefined,
       imagePath: '/images/items/ferrium.webp',
     },
     amethyst_fiber: {
       label: '紫晶纤维',
-      category: ItemCategory.ore_refined,
+      category: ItemCategory.oreRefined,
       imagePath: '/images/items/amethyst_fiber.webp',
     },
   };
@@ -177,12 +177,12 @@ describe('groupReceiptsByCategory', () => {
     },
     carbon: {
       label: '碳',
-      category: ItemCategory.ore_refined,
+      category: ItemCategory.oreRefined,
       imagePath: '/images/items/carbon.webp',
     },
     carbon_powder: {
       label: '碳粉',
-      category: ItemCategory.ore_powder,
+      category: ItemCategory.orePowder,
       imagePath: '/images/items/carbon_powder.webp',
     },
     amethyst_bottle: {

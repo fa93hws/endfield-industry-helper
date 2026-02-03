@@ -27,7 +27,7 @@ describe('RecipeGroup', () => {
         outputs: [{ item: 'carbon', perMin: 30 }],
       },
     ];
-    render(<RecipeGroup recipes={singleRecipe} />);
+    render(<RecipeGroup recipes={singleRecipe} searchQuery="" />);
 
     // Should show the first recipe
     expect(screen.getByText('荞花')).toBeInTheDocument();
@@ -38,7 +38,7 @@ describe('RecipeGroup', () => {
   });
 
   it('should render first recipe with collapsed accordion when multiple recipes exist', () => {
-    render(<RecipeGroup recipes={multipleRecipes} />);
+    render(<RecipeGroup recipes={multipleRecipes} searchQuery="" />);
 
     // Should show the first recipe
     expect(screen.getByText('荞花')).toBeInTheDocument();
@@ -53,7 +53,7 @@ describe('RecipeGroup', () => {
 
   it('should show remaining recipes when accordion is expanded', async () => {
     const user = userEvent.setup();
-    render(<RecipeGroup recipes={multipleRecipes} />);
+    render(<RecipeGroup recipes={multipleRecipes} searchQuery="" />);
 
     // Initially collapsed - remaining recipes not visible
     const sandleafElement = screen.getByText('砂叶');

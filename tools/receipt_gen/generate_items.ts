@@ -51,10 +51,11 @@ function generateItemsTS(items: ItemRow[]): string {
   // Collect unique categories
   const categories = [...new Set(items.map((item) => item.category))].sort();
 
-  // Add category enum (using snake_case keys to match values)
+  // Add category enum (camelCase keys with snake_case values)
   lines.push('export enum ItemCategory {');
   categories.forEach((category) => {
-    lines.push(`  ${category},`);
+    const camelCaseKey = toCamelCase(category);
+    lines.push(`  ${camelCaseKey},`);
   });
   lines.push('}');
   lines.push('');
@@ -73,11 +74,12 @@ function generateItemsTS(items: ItemRow[]): string {
   // Generate each item entry
   items.forEach((item) => {
     const camelCaseKey = toCamelCase(item.id);
+    const camelCaseCategory = toCamelCase(item.category);
     const imagePath = `/images/items/${item.id}.webp`;
 
     lines.push(`  ${camelCaseKey}: {`);
     lines.push(`    label: '${item.chineseName}',`);
-    lines.push(`    category: ItemCategory.${item.category},`);
+    lines.push(`    category: ItemCategory.${camelCaseCategory},`);
     lines.push(`    imagePath: '${imagePath}',`);
     lines.push(`  },`);
   });

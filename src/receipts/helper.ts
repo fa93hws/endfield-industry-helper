@@ -47,14 +47,14 @@ export function groupReceiptsByCategory(
     { title: '装备组件', categories: [ItemCategory.component] },
     { title: '电池', categories: [ItemCategory.battery] },
     { title: '药品', categories: [ItemCategory.medicine] },
-    { title: '瓶装溶液', categories: [ItemCategory.bottled_solution] },
+    { title: '瓶装溶液', categories: [ItemCategory.bottledSolution] },
     { title: '溶液', categories: [ItemCategory.solution] },
     { title: '瓶子', categories: [ItemCategory.bottle] },
     {
       title: '矿石',
-      categories: [ItemCategory.ore_refined, ItemCategory.ore_powder],
+      categories: [ItemCategory.oreRefined, ItemCategory.orePowder],
     },
-    { title: '植物', categories: [ItemCategory.plant_powder] },
+    { title: '植物', categories: [ItemCategory.plantPowder] },
   ];
 
   const sections: ReceiptSection[] = [];

@@ -6,7 +6,7 @@
   "scripts": {
     "page:dev": "vike dev",
     "page:build": "tsc && vike build",
-    "lint:ts:type": "tsc --noEmit",
+    "lint:ts:type": "tsc --noEmit && tsc --noEmit --project tsconfig.node.json && tsc --noEmit --project tests/tsconfig.json",
     "lint:ts": "eslint . --ext .ts,.tsx --max-warnings 0",
     "lint:ts:fix": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier --check .",

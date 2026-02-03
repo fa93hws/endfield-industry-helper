@@ -1,15 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import {
-  allProduces,
-  allReceipts,
-  ItemCategory,
-  items,
-  naturalItems,
-  receipts,
-  type AicProductKey,
-} from '@receipts';
+import { allProduces, allReceipts, ItemCategory, items, naturalItems, receipts } from '@receipts';
 import { describe, expect, it } from 'vitest';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -44,9 +36,9 @@ describe('Data Integrity', () => {
       const manufacturedItems = Object.entries(items)
         .filter(
           ([, item]) =>
-            item.category !== ItemCategory.natural_plant &&
-            item.category !== ItemCategory.natural_ore &&
-            item.category !== ItemCategory.plant_seed &&
+            item.category !== ItemCategory.naturalPlant &&
+            item.category !== ItemCategory.naturalOre &&
+            item.category !== ItemCategory.plantSeed &&
             item.category !== ItemCategory.other,
         )
         .map(([itemId]) => itemId);
@@ -70,7 +62,7 @@ describe('Data Integrity', () => {
 
     it('should have every AIC product with at least one recipe that produces it', () => {
       // Get all AIC product keys
-      const aicProductKeys = Object.keys(allProduces) as AicProductKey[];
+      const aicProductKeys = Object.keys(allProduces);
 
       // Build a set of all items that are produced by recipes
       const producedItems = new Set<string>();
@@ -81,7 +73,7 @@ describe('Data Integrity', () => {
       });
 
       // Check each AIC product
-      const missingRecipes: AicProductKey[] = [];
+      const missingRecipes: string[] = [];
       aicProductKeys.forEach((productKey) => {
         if (!producedItems.has(productKey)) {
           missingRecipes.push(productKey);
