@@ -20,7 +20,7 @@ export function Page() {
 
   const handleAddOutput = () => {
     // Add with default item, quantity will be auto-detected from recipe
-    const defaultItem = 'carbon';
+    const defaultItem = 'battery_valley_hc';
     addDesiredOutput(defaultItem);
   };
 
