@@ -7,6 +7,7 @@ import { HighlightText } from './highlight_text';
 interface RecipeItemProps {
   recipe: Receipt;
   searchQuery?: string;
+  scaleFactor?: number;
 }
 
 function ItemDisplay({
@@ -43,9 +44,21 @@ function ItemDisplay({
   );
 }
 
-export function RecipeItem({ recipe, searchQuery = '' }: RecipeItemProps) {
+export function RecipeItem({ recipe, searchQuery = '', scaleFactor }: RecipeItemProps) {
   return (
     <Stack direction="row" spacing={2} alignItems="center" flexWrap="wrap">
+      {scaleFactor != null && (
+        <Typography
+          variant="body1"
+          sx={{
+            fontWeight: 'bold',
+            color: 'primary.main',
+            minWidth: 'fit-content',
+          }}
+        >
+          {scaleFactor.toFixed(2)}x
+        </Typography>
+      )}
       <Stack direction="row" spacing={1} alignItems="center">
         {recipe.inputs.map((input, i) => (
           <ItemDisplay

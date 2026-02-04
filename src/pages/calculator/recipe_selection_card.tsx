@@ -31,6 +31,10 @@ export function RecipeSelectionCard({
 }: RecipeSelectionCardProps) {
   const hasAlternatives = alternativeRecipes.length > 1;
 
+  // Calculate scale factor: how many times the recipe needs to run
+  const outputItem = chosenRecipe.outputs.find((o) => o.item === item);
+  const scaleFactor = outputItem ? quantity / outputItem.perMin : 1;
+
   return (
     <Paper variant="outlined" sx={{ p: 2 }}>
       <Stack spacing={1}>
@@ -46,7 +50,7 @@ export function RecipeSelectionCard({
           )}
         </Stack>
 
-        <RecipeItem recipe={chosenRecipe} />
+        <RecipeItem recipe={chosenRecipe} scaleFactor={scaleFactor} />
 
         {hasAlternatives && (
           <Accordion disableGutters elevation={0}>
@@ -61,14 +65,18 @@ export function RecipeSelectionCard({
                 onChange={(e) => onRecipeChange(alternativeRecipes[parseInt(e.target.value)])}
               >
                 <Stack spacing={1}>
-                  {alternativeRecipes.map((recipe, index) => (
-                    <FormControlLabel
-                      key={index}
-                      value={index}
-                      control={<Radio />}
-                      label={<RecipeItem recipe={recipe} />}
-                    />
-                  ))}
+                  {alternativeRecipes.map((recipe, index) => {
+                    const altOutputItem = recipe.outputs.find((o) => o.item === item);
+                    const altScaleFactor = altOutputItem ? quantity / altOutputItem.perMin : 1;
+                    return (
+                      <FormControlLabel
+                        key={index}
+                        value={index}
+                        control={<Radio />}
+                        label={<RecipeItem recipe={recipe} scaleFactor={altScaleFactor} />}
+                      />
+                    );
+                  })}
                 </Stack>
               </RadioGroup>
             </AccordionDetails>
